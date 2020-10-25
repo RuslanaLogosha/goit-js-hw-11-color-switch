@@ -21,15 +21,21 @@ class colorPicker  {
         if (this.isActive) {
             return;
         }
-        this.isActive = true;
-        this.intervalId = setInterval(() => {
-            getBodyColor(colors)
+      
+      this.isActive = true;
+      this.intervalId = setInterval(() => {
+          
+        getBodyColor(colors)
+        startColorPickerBtn.setAttribute("disabled", "disabled");
+        
         }, 1000);
+      
 }
 
     onStopBtnClick(evt) {
         clearInterval(this.intervalId);
-        this.isActive = false;
+      this.isActive = false;
+      startColorPickerBtn.removeAttribute("disabled");
 }
 }
 
